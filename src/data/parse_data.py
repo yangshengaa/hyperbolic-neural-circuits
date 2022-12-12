@@ -87,10 +87,11 @@ def parse_mnist():
     y = np.hstack((train_y, test_y))
 
     # standardize
-    X_selected = X[:, X.std(axis=0) > 1]
-    X_selected = (X_selected - X_selected.mean(axis=0, keepdims=True)) / X_selected.std(
-        axis=0, keepdims=True
-    )
+    # X_selected = X[:, X.std(axis=0) > 1]
+    # X_selected = (X_selected - X_selected.mean(axis=0, keepdims=True)) / X_selected.std(
+    #     axis=0, keepdims=True
+    # )
+    X_selected = X / 256
     print(X_selected.shape)
 
     # save
@@ -138,7 +139,7 @@ def parse_cifar10():
     )
 
     # standardize X
-    X = (X - X.mean(axis=0, keepdims=True)) / X.std(axis=0, keepdims=True)
+    X = (X - X.mean(axis=0, keepdims=True)) / X.std(axis=0, keepdims=True) / 10
 
     # save
     folder_path = "data/cifar10"

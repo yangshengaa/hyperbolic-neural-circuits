@@ -41,7 +41,7 @@ def main():
 
     # log data
     with open("result/hyperbolicity.txt", "a+") as f:
-        data_info = f'syn_{args.n}_{args.p}' if args.data == 'syn' else args.data
+        data_info = f"syn_{args.n}_{args.p}" if args.data == "syn" else args.data
         f.write(f"{data_info},{delta}\n")
 
 
