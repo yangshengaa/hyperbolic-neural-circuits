@@ -138,3 +138,13 @@ command/*
 # result 
 result/*
 !result/.gitkeep
+
+# notebook
+notebook/
+
+# model
+model/*
+!model/.gitkeep
+
+# intermediary 
+*.out
